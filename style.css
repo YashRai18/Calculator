@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Ubuntu:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* align to top */
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding-top: 50px; /* space from top */
+}
+
+/* Static background text */
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px; /* adjust size as needed */
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3); /* high opacity for visibility */
+  white-space: nowrap;
+  pointer-events: none; /* clicks pass through */
+  user-select: none; /* cannot select text */
+  text-align: center;
+}
+
+.calculator {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  position: relative; /* stays above background text */
+  z-index: 1;
+}
+
+.calculator-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px; /* space between title and calculator */
+  text-align: center;
+}
+
+#display {
+  width: calc(100% - 10px);
+  height: 60px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: #fff;
+}
+
+.buttons,
+.memory-buttons {
+  display: grid;
+  gap: 10px;
+}
+
+.buttons {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 15px;
+}
+
+.memory-buttons {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+  height: 60px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #444;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #666;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Operator buttons */
+.buttons .button:nth-child(4n) {
+  background: #f39c12;
+}
+.buttons .button:nth-child(4n):hover {
+  background: #e67e22;
+}
+
+/* = button */
+.buttons .button:last-child {
+  background: #27ae60;
+  grid-column: span 2;
+}
+.buttons .button:last-child:hover {
+  background: #2ecc71;
+}
+
+/* Memory buttons */
+.memory-buttons .button {
+  background: #555;
+  font-size: 18px;
+  height: 50px;
+}
+.memory-buttons .button:hover {
+  background: #777;
+}
